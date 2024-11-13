@@ -1,0 +1,50 @@
+$('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    dots:false,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:4
+        }
+    }
+})
+
+$(document).ready(function(){
+    $("#video").click(function(){
+        $(".video__box").show()
+        $(".image__box").hide()
+        $(".live__box").hide()
+        $("#video").addClass("active-button")
+        $("#image").removeClass("active-button")
+        $("#live").removeClass("active-button")
+    })
+    $("#live").click(function(){
+        $(".video__box").hide()
+        $(".image__box").hide()
+        $(".live__box").show()
+        $("#live").addClass("active-button")
+        $("#image").removeClass("active-button")
+        $("#video").removeClass("active-button")
+    })
+    $("#image").click(function(){
+        $(".video__box").hide()
+        $(".image__box").show()
+        $(".live__box").hide()
+        $("#image").addClass("active-button")
+        $("#video").removeClass("active-button")
+        $("#live").removeClass("active-button")
+    })
+    $("#mobile-menu").click(function(){
+        $("nav").slideDown()
+    })
+    $("#close-button").click(function(){
+        $("nav").slideUp()
+    })
+});
